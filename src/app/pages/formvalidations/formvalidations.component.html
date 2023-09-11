@@ -1,0 +1,26 @@
+<p>Tasks 3 - Form Validations</p>
+
+<form [formGroup]="formValidations" (ngSubmit)="onSubmit()">
+    <label>Name: </label>
+    <input type="text" placeholder="name" formControlName="name"><br>
+    <label>Email: </label>
+    <input type="email" placeholder="email" formControlName="email"><br>
+    <label>Contact: </label>
+    <input type="text" placeholder="contact" formControlName="contact"><br>
+    <label>Password: </label>
+    <input type="text" placeholder="password" formControlName="password"><br>
+    <input type="submit" value="Submit" [disabled]="!formValidations.valid">
+</form>
+
+<div *ngIf="isSubmitted">
+    <hr>
+    Submitted Details:
+    <br>
+    Name: {{formValidations.value['name']}}
+    <br>
+    Email: {{formValidations.value['email']}}
+    <br>
+    Contact Number: {{formValidations.value['contact']}}
+    <br>
+    Password: {{formValidations.value['password']}}
+</div>

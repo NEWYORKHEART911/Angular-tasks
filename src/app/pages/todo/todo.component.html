@@ -1,0 +1,12 @@
+<p>Task 2 - ToDoList</p>
+
+<form [formGroup]="toDoList" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="workItem" placeholder="workItem">
+    <input type="submit" value="add">
+</form>
+
+<p>View todo list Items</p>
+
+<div *ngFor="let item of arrayData; let myIndex=index;">
+    {{item}} <button (click)="removeItem(myIndex)">Remove</button>
+</div>

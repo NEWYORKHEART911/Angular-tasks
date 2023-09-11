@@ -1,0 +1,16 @@
+<p> Task 7 - Profile
+<br>
+Settings
+</p>
+    
+<form [formGroup]="editProfile" (ngSubmit)="onSubmit()">
+    <label>Name: </label>
+    <input type="text" placeholder="enter name" formControlName="name"><br>
+    <label>Email: </label>
+    <input type="email" placeholder="enter email" formControlName="email"><br>
+    <label>Contact: </label>
+    <input type="number" placeholder="enter contact number" formControlName="contact"><br>
+    <label>Profile Photo URL: </label>
+    <input type="file" accept="image/png, image/jpeg" formControlName="image" (change)="onFileChange($event)"><br>
+    <button type="submit" id="btn" [disabled]="!editProfile.valid">Save</button>
+</form>

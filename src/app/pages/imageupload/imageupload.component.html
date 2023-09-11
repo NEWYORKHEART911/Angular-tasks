@@ -1,0 +1,5 @@
+<p> Task 5 - ImageUpload </p>
+
+<img *ngIf="isSubmitted" [src]="objectURL"><br><br>
+
+<input type="file" accept="image/png, image/jpeg" (change)="onFileChange($event)">
